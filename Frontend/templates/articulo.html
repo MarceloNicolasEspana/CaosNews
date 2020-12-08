@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/normalize.css '%}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <title>Caos News</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+
+                <a href="/index/">
+                    <h1>Caos<span>NEWS</span></h1>
+                </a>
+
+                <nav id="nav" class="navegacion">
+                        <a href="categoria_salud.html">Salud</a>
+                        <a href="categoria_tecnologia.html">Tecnología</a>
+                        <a href="categoria_deporte.html">Deporte</a>
+                        <a href="categoria_educacion.html">Educación</a>
+                        <a href="categoria_politica.html">Politica</a>
+                        <a href="contacto.html">Contacto</a>
+                        <a href="nosotros.html">Nosotros</a>
+                    </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="contenedor con-sidebar">
+            {% static 'img' as base_url %}
+            <article class="art-3 contenedor">
+                <h1>{{articulo.titulo}}</h1>
+                <em>{{articulo.fecha}}</em>
+                <img src="{{base_url}}/thumb_{{articulo.imagen}}" alt="foto virus" width="700" height="400">
+                <p>{{articulo.descripcion}}
+                </p>
+            </article>
+            <aside>
+                <h1>En otras noticias...</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea vel fugit a perferendis veniam molestias hic vitae ut eligendi inventore velit cum, necessitatibus, porro deleniti voluptatem, amet aspernatur? Rem, ipsa. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Distinctio, alias animi! Incidunt ipsa earum quis illo a nam voluptates rerum similique magni. Quo debitis, atque molestias voluptas perspiciatis eligendi id! Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Optio facere, error nisi nam quam aperiam reprehenderit odit dolor, ipsam molestias distinctio aliquam quasi voluptas fugit quas. Perspiciatis placeat non voluptatibus.
+                </p>
+                <a href="#">Leer más -></a>
+            </aside>
+        </div>
+    </main>
+
+    <!--<div class="card mb-10 shadow-sm">
+                            {% static 'img' as base_url %}
+                            <img src="{{base_url}}/{{imagen.nombre}}" alt="">
+                            <p class="card-text">{{imagen.texto}}.</p>
+                            
+                        </div>-->
+
+
+    <footer class="site-footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a href="index.html">
+                    <h1>Caos<span>NEWS</span></h1>
+                </a>
+                <p>CopyRight <i>&copy;</i>2020</p>
+
+                <nav id="nav" class="navegacion">
+                    <a href="form_registro.html">Registrate</a>
+                    <a href="form_log_in.html">Log in</a>
+                    <a href="categoria_salud.html">Salud</a>
+                    <a href="categoria_tecnologia.html">Tecnología</a>
+                    <a href="categoria_deporte.html">Deporte</a>
+                    <a href="categoria_educacion.html">Educación</a>
+                    <a href="categoria_politica.html">Politica</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="nosotros.html">Nosotros</a>
+                </nav>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>

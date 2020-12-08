@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/normalize.css '%}">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <title>Caos News</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+
+                <a href="/index/">
+                    <h1>Caos<span>NEWS</span></h1>
+                    
+                </a>
+
+                <div class="contenedor-form">
+                    <form class="contenedor-form">
+                        <div>
+                            <input type="text" placeholder="buscar">
+                            <span>
+                            <button class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </span>
+                        </div>
+                    </form>
+
+                    <nav id="nav" class="navegacion">
+                        <a href="">Registro</a>
+                        <a href="/login/">Login</a>
+                        <a href="categoria_salud.html">Salud</a>
+                        <a href="categoria_tecnologia.html">Tecnología</a>
+                        <a href="categoria_deporte.html">Deporte</a>
+                        <a href="categoria_educacion.html">Educación</a>
+                        <a href="categoria_politica.html">Politica</a>
+                        <a href="contacto.html">Contacto</a>
+                        <a href="/nosotros/">Nosotros</a>
+                    </nav>
+
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+            <!--carousel item-->>
+                <div class="carousel-item active">
+                    <a href="articulo_1.html">
+                        <img src="../static/img/thumb_Foto_covid.jpg" alt="Imagen" width="1000" heigth="1000">
+
+                        <div class="carousel-caption">
+                            <div>
+                                <h2>Posible medicina contra el coronavirus</h2>
+                                <p>Para leer más, presione aquí.</p>
+                                <span class="btn btn-sm btn-secondary">Leer más</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <a href="articulo_2.html">
+                        <img src="../static/img/estallido.jpeg" alt="imagen estallido" width="740" heigth="200">
+
+                        <div class="carousel-caption justify-content-center align-items-center">
+                            <div>
+                                <h2>Estallido social en chile.</h2>
+                                <p>Entérese de cada detalle durante el estallido</p>
+                                <span class="btn btn-sm btn-secondary">Leer más</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <a href="articulo_3.html">
+                        <img src="../static/img/lavin.jpg" alt="imagen lavin" width="850" heigth="1000">
+
+                        <div class="carousel-caption justify-content-center align-items-center">
+                            <div>
+                                <h2>Lavin quiere ser presidente</h2>
+                                <p>Si quiere ver más detalles, presione abajo.</p>
+                                <span class="btn btn-sm btn-secondary">Leer más</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- /.carousel-item -->
+            </div>
+            <!-- /.carousel-inner -->
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- /.carousel -->
+
+        <h1 class="centrar-txt">Otras noticias</h1>
+        <div>
+            <ul class="lista-noticias">
+            {% for i in noticias %}
+                <li>
+                    <h4>{{i.titulo}}</h4>
+                    <a href="/articulo/{{i.idNoticia}}">
+                        <!--<img src="{{base_url}}/thumb_{{i.imagen}}.jpg" alt="imagen" width="438" height="297" >-->
+                        <img src="../static/img/thumb_{{i.imagen}}" alt="imagen" width="438" height="297">
+                        <p>{{i.descripcion}}</p>
+                        <p>{{i.fecha}}</p>
+                        <a href=""><span class="btn">Leer más</span></a>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a href="/index/">
+                    <h1>Caos<span>NEWS</span></h1>
+                </a>
+                <p>CopyRight <i>&copy;</i>2020</p>
+
+                <nav id="nav" class="navegacion">
+                    <a href="form_registro.html">Registrate</a>
+                    <a href="form_log_in.html">Log in</a>
+                    <a href="categoria_salud.html">Salud</a>
+                    <a href="categoria_tecnologia.html">Tecnología</a>
+                    <a href="categoria_deporte.html">Deporte</a>
+                    <a href="categoria_educacion.html">Educación</a>
+                    <a href="categoria_politica.html">Politica</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="nosotros.html">Nosotros</a>
+                </nav>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
